@@ -1,0 +1,10 @@
+name: Expression Syntax
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set environment variable using expression
+      run: echo "Today is ${{ github.event.push.timestamp }}"
+      env:
+        MY_ENV_VAR: ${{ github.event.push.timestamp }}
